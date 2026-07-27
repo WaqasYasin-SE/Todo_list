@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Todo Manager</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="top-bar">
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+
+<h1>Todo Manager</h1>
+
+
+
+<!-- HOME PAGE -->
+
+<div id="home" class="card">
+
+
+<button 
+type="button"
+class="add-btn" 
+onclick="showAdd()">
+
++ Add Task
+
+</button>
+
+
+
+<button 
+type="button"
+class="show-btn" 
+onclick="showTasks()">
+
+Show Tasks
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ADD TASK PAGE -->
+
+<div id="addSection" class="card hidden">
+
+
+<h2>Add New Task</h2>
+
+
+
+<input 
+id="title"
+placeholder="Enter task title">
+
+
+
+<br><br>
+
+
+
+<input 
+type="datetime-local"
+id="deadline">
+
+
+
+<br><br>
+
+
+
+<button 
+type="button"
+class="add-btn" 
+onclick="addTask()">
+
+Save Task
+
+</button>
+
+
+
+<button 
+type="button"
+class="back-btn" 
+onclick="goBack()">
+
+Back
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- TASK PAGE -->
+
+
+<div id="taskSection" class="hidden">
+
+
+<button 
+type="button"
+class="back-btn" 
+onclick="goBack()">
+
+Back
+
+</button>
+
+
+
+<div id="taskList">
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div id="toast"></div>
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+
+</html>
